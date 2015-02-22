@@ -26,7 +26,7 @@ module Hexx
           prepare_output
           set_environment
 
-          self
+          super
         end
 
         # @!scope class

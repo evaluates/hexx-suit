@@ -25,19 +25,19 @@ module Hexx
           def load
             configure { |metric| options.each { |option| add(metric, option) } }
 
-            self
+            super
           end
 
           private
 
           # current metric definitions
 
+          # @abstract
           def name
-            :metric_fu
           end
 
+          # @abstract
           def options
-            %w()
           end
 
           # helpers

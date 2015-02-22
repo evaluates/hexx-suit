@@ -23,7 +23,7 @@ module Hexx
           configure_metric_fu
           configure_packages
 
-          self
+          super
         end
 
         private

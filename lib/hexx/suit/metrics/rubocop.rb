@@ -13,7 +13,7 @@ module Hexx
           ENV["RUBOCOP_FORMAT"] = options["format"]
           ENV["RUBOCOP_OUTPUT"] = options["output"]
 
-          self
+          super
         end
 
         private

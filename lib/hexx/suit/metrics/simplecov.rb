@@ -25,7 +25,7 @@ module Hexx
           set_environment
           configure_metric
 
-          self
+          super
         end
 
         # @!scope class

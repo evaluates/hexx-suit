@@ -22,7 +22,8 @@ module Hexx
 
         # Loads metric settings and configures the current metric
         #
-        # @return (see #load)
+        # @return [Hexx::Suit::Metrics]
+        #   the configured metric object
         def self.load
           send(:new).load
         end
@@ -36,10 +37,7 @@ module Hexx
 
         # Loads the configuration file and configures the metric
         #
-        # @abstract
-        #
-        # @return [Hexx::Suit::Metrics]
-        #   the configured metric object
+        # @return [self]
         #
         # @api private
         def load
