@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "i18n", "~> 0.7"
   s.add_runtime_dependency "inch", "~> 0.5"
   s.add_runtime_dependency "metric_fu", "~> 4.11"
-  s.add_runtime_dependency "mutant", "~> 0.7.6"
+  s.add_runtime_dependency "mutant", "~> 0.7"
   s.add_runtime_dependency "pippi", "~> 0.0"
   s.add_runtime_dependency "pry", "~> 0.10"
   s.add_runtime_dependency "pry-byebug", "~> 3.0"
