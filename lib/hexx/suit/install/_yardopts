@@ -1,0 +1,2 @@
+--asset LICENSE
+--exclude lib/**/version.rb
