@@ -29,13 +29,13 @@ Add this line to your application's Gemfile:
 Then execute:
 
 ```
-    $ bundle
+    bundle
 ```
 
 And run the task from the application root:
 
 ```
-    $ hexx-suit install
+    hexx-suit install
 ```
 
 Require the gem in the `spec_helper.rb` **before** loading application:
@@ -63,13 +63,13 @@ The gem adds three tasks for a development process authomation:
 The task runs rspec (runs no coverage controls) **in a bundle environment**.
 
 ```
-    $ rake test
+    rake test
 ```
 
 This is a simple shortcut for longer syntaxes:
 
 ```
-    $ bundle exec rspec spec
+    bundle exec rspec spec
 ```
 
 ### Debug
@@ -77,13 +77,13 @@ This is a simple shortcut for longer syntaxes:
 The tasks runs specs wrapped to pry `rescue` command.
 
 ```
-    $ rake debug
+    rake debug
 ```
 
 This is the same as:
 
 ```
-    $ bundle exec rescue rspec spec
+    bundle exec rescue rspec spec
 ```
 
 ### Check
@@ -91,19 +91,19 @@ This is the same as:
 The task runs rspec under the test coverage control, and then calls all the code metrics, except for mutation testing.
 
 ```
-    $ rake check
+    rake check
 ```
 
 You can use single metrics as well:
 
 ```
-    $ rake check:yardstick
+    rake check:yardstick
 ```
 
 See all tasks at:
 
 ```
-    $ rake -T check
+    rake -T check
 ```
 
 All the tasks will use settings from `config/metrics` folder.
