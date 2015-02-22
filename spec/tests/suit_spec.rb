@@ -4,6 +4,46 @@ describe Hexx::Suit do
 
   let(:coverage_settings) { described_class::Metrics::SimpleCov }
   let(:pippi_settings)    { described_class::Metrics::Pippi     }
+  let(:rake_tasks)        { Rake::Task.tasks.map(&:name)        }
+
+  describe ".install_tasks" do
+
+    before { described_class.install_tasks }
+
+    it "installs Gem tasks" do
+      expect(rake_tasks).to include("build", "install", "release")
+    end
+
+    it "installs RSpec tasks" do
+      expect(rake_tasks).to include("spec")
+    end
+
+    it "installs described_class tasks" do
+      expect(rake_tasks).to include(*%w(
+        check
+        check:coverage
+        check:coverage:display
+        check:coverage:run
+        check:display
+        check:fu
+        check:fu:display
+        check:fu:run
+        check:inch
+        check:pippi
+        check:pippi:display
+        check:pippi:run
+        check:rubocop
+        check:rubocop:display
+        check:rubocop:run
+        check:run
+        check:yardstick
+        check:yardstick:display
+        check:yardstick:run
+        debug
+        test
+      ))
+    end
+  end
 
   describe ".load_metrics_for" do
 
