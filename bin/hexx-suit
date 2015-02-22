@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require "hexx-suit"
+
+# Command line runner.
+class CLI < Thor
+  register(
+    Hexx::Suit::Install,
+    "install",
+    "install [NAME]",
+    "Creates a Rakefile in the application root."
+  )
+end
+
+CLI.start

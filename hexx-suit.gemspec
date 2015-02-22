@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = "~> 2.1"
 
   s.files            = Dir["config/**/*", "lib/**/*", ".rubocop.yml"]
+  s.executables      = ["hexx-suit"]
   s.test_files       = Dir["spec/**/*", "Rakefile", "Guardfile"]
   s.extra_rdoc_files = Dir["LICENSE", "README.md", ".yardopts"]
 
