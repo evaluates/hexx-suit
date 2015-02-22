@@ -3,7 +3,6 @@
 [![Gem Version](https://img.shields.io/gem/v/hexx-suit.svg?style=flat)][gem]
 [![Build Status](https://img.shields.io/travis/nepalez/hexx-suit/master.svg?style=flat)][travis]
 [![Dependency Status](https://img.shields.io/gemnasium/nepalez/hexx-suit.svg?style=flat)][gemnasium]
-[![Code Climate](https://img.shields.io/codeclimate/coverage/github/nepalez/hexx-suit.svg?style=flat)][codeclimate]
 [![Coverage](https://img.shields.io/coveralls/nepalez/hexx-suit.svg?style=flat)][coveralls]
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](file:LICENSE)
 

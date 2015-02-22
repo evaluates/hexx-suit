@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "mutant", "~> 0.7.6"
   s.add_runtime_dependency "pippi", "~> 0.0"
   s.add_runtime_dependency "pry", "~> 0.10"
-  s.add_runtime_dependency "pry-byebug", "~> 2.0"
+  s.add_runtime_dependency "pry-byebug", "~> 3.0"
   s.add_runtime_dependency "pry-rescue", "~> 1.4"
   s.add_runtime_dependency "pry-stack_explorer", "~> 0.4"
   s.add_runtime_dependency "rake", "~> 10.3"
