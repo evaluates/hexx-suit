@@ -6,6 +6,8 @@ Dir.chdir File.expand_path("../..", __FILE__) do
   Dir[
     "./config/initializers/*.rb",
     "./lib/hexx/suit/utils/*.rb",
+    "./lib/hexx/suit/metrics/base.rb",
+    "./lib/hexx/suit/metrics/*.rb",
     "./lib/hexx/suit/*.rb",
     "./lib/hexx/suit.rb"
   ].each { |file| require file }
