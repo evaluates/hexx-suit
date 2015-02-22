@@ -70,7 +70,7 @@ module Hexx
         def configure_metric
           add_filters
           add_groups
-          set_formatter
+          set_formatters
           set_output
         end
 
@@ -82,8 +82,11 @@ module Hexx
           groups.each { |key, value| metric.add_group(key, value) }
         end
 
-        def set_formatter
-          metric.formatter = metric::Formatter::HTMLFormatter
+        def set_formatters
+          metric.formatter = metric::Formatter::MultiFormatter[
+            metric::Formatter::HTMLFormatter,
+            ::Coveralls::SimpleCov::Formatter
+          ]
         end
 
         def set_output
