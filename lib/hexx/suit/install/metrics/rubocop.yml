@@ -71,7 +71,7 @@ Style/SpecialGlobalVars:
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
-Stype/StringLiteralsInInterpolation:
+Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 
 Style/TrivialAccessors:
