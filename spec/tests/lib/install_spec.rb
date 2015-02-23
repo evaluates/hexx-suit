@@ -9,6 +9,7 @@ describe Hexx::Suit::Install, :sandbox do
     it "creates necessary files" do
       %w(
         .rspec
+        .rubocop.yml
         .yardopts
         Guardfile
         Rakefile

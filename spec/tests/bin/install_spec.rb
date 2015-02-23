@@ -9,6 +9,7 @@ describe "hexx-suit install", :sandbox do
     it "creates necessary files" do
       %w(
         .rspec
+        .rubocop.yml
         .yardopts
         Guardfile
         Rakefile
@@ -23,6 +24,7 @@ describe "hexx-suit install", :sandbox do
         config/metrics/saikuro.yml
         config/metrics/simplecov.yml
         config/metrics/yardstick.yml
+        config/metrics/STYLEGUIDE
       ).each { |file| expect(file).to be_present_in_sandbox }
     end
   end

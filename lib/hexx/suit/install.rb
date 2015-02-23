@@ -80,6 +80,15 @@ module Hexx
       def create_metrics_loader
         copy_file "_metrics", ".metrics"
       end
+
+      # creates metric_fu loader
+      #
+      # @return [undefined]
+      #
+      # @api private
+      def create_rubocop_loader
+        copy_file "_rubocop.yml", ".rubocop.yml"
+      end
     end # class Install
   end # module Suit
 end # module Hexx
