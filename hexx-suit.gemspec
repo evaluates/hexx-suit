@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version     = Hexx::Suit::VERSION.dup
   s.author      = "Andrew Kozin"
   s.email       = "andrew.kozin@gmail.com"
-  s.homepage    = "https://github.com/nepalez/hexx"
+  s.homepage    = "https://github.com/nepalez/hexx-suit"
   s.summary     = "Test/development suit."
   s.description = "The module collects gems used for development and testing."
   s.license     = "MIT"
