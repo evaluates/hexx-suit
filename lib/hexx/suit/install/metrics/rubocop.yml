@@ -9,31 +9,27 @@ AllCops:
 
 Lint/HandleExceptions:
   Exclude:
-    - 'spec/**/*'
+    - '**/*_spec.rb'
 
 Lint/RescueException:
   Exclude:
-    - 'spec/**/*'
-
-Metrics/ClassLength:
-  Exclude:
-    - 'lib/**/generator*'
+    - '**/*_spec.rb'
 
 Style/AccessorMethodName:
   Exclude:
-    - 'spec/**/*'
+    - '**/*_spec.rb'
 
 Style/AsciiComments:
   Enabled: false
 
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'spec/**/*'
+    - '**/*_spec.rb'
 
 Style/Documentation:
   Exclude:
-    - 'lib/**/version.rb'
-    - 'spec/**/*'
+    - '**/version.rb'
+    - '**/*_spec.rb'
 
 Style/EmptyLinesAroundBlockBody:
   Enabled: false
@@ -58,15 +54,15 @@ Style/RaiseArgs:
 
 Style/SingleLineMethods:
   Exclude:
-    - 'spec/**/*'
+    - '**/*_spec.rb'
 
 Style/SingleSpaceBeforeFirstArg:
   Enabled: false
 
 Style/SpecialGlobalVars:
   Exclude:
-    - 'Gemfile'
-    - '*.gemspec'
+    - '**/Gemfile'
+    - '**/*.gemspec'
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
@@ -76,4 +72,4 @@ Style/StringLiteralsInInterpolation:
 
 Style/TrivialAccessors:
   Exclude:
-    - 'spec/**/*'
+    - '**/*_spec.rb'
