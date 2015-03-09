@@ -2,16 +2,16 @@ source "https://rubygems.org"
 
 gemspec
 
-if %w(ruby rbx).include? RUBY_ENGINE
-  gem "pry-rescue"
-  gem "pry-stack_explorer"
+platforms :ruby do
+  gem "pry-rescue", "~> 1.4"
+  gem "pry-stack_explorer", "~> 0.4"
 end
 
-if RUBY_ENGINE == "ruby"
-  if RUBY_VERSION < "2.0"
-    gem "pry-debugger"
-  else
-    gem "pry-byebug"
-    gem "pippi"
-  end
+platforms :mri_19 do
+  gem "pry-debugger", "~> 0.2"
+end
+
+platforms :mri_20, :mri_21, :mri_22 do
+  gem "pry-byebug", "~> 3.0", platforms: :mri_20
+  gem "pippi", "~> 0.0", platforms: :mri_20
 end
