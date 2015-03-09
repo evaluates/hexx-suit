@@ -1,7 +1,7 @@
 ---
 language: ruby
 bundler_args: --without=extras
-script: rake check:coverage
+script: bundle exec rspec spec
 rvm:
   - '1.9.2'
   - '1.9.3'
