@@ -32,4 +32,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "thor", "~> 0.19"
   s.add_runtime_dependency "yardstick", "~> 0.9"
 
+  s.add_development_dependency "bundler", "~> 1.8"
+
 end
