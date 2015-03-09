@@ -1,6 +1,5 @@
 ---
 language: ruby
-bundler_args: --without=extras
 script: bundle exec rspec spec
 rvm:
   - '1.9.3'

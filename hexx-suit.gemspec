@@ -28,19 +28,4 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "rubocop", "~> 0.23"
   s.add_runtime_dependency "thor", "~> 0.19"
   s.add_runtime_dependency "yardstick", "~> 0.9"
-
-  # Gems not available under JRuby head
-  if %w(ruby rbx).include? RUBY_ENGINE
-    s.add_runtime_dependency "pry-rescue", "~> 1.4"
-    s.add_runtime_dependency "pry-stack_explorer", "~> 0.4"
-  end
-
-  if RUBY_ENGINE == "ruby"
-    if RUBY_VERSION < "2.0"
-      s.add_runtime_dependency "pry-debugger"
-    else
-      s.add_runtime_dependency "pry-byebug", "~> 3.0"
-      s.add_runtime_dependency "pippi", "~> 0.0"
-    end
-  end
 end
