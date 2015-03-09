@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = "~> 2.1"
 
-  s.files            = Dir["config/**/*", "lib/**/*", ".rubocop.yml"]
+  s.files            = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   s.executables      = ["hexx-suit"]
   s.test_files       = Dir["spec/**/*", "Rakefile", "Guardfile"]
   s.extra_rdoc_files = Dir["LICENSE", "README.md", ".yardopts"]
@@ -24,9 +24,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "inch", "~> 0.5"
   s.add_runtime_dependency "metric_fu", "~> 4.11"
   s.add_runtime_dependency "mutant-rspec", "~> 0.7"
-  s.add_runtime_dependency "pippi", "~> 0.0"
   s.add_runtime_dependency "pry", "~> 0.10"
-  s.add_runtime_dependency "pry-byebug", "~> 3.0"
   s.add_runtime_dependency "pry-rescue", "~> 1.4"
   s.add_runtime_dependency "pry-stack_explorer", "~> 0.4"
   s.add_runtime_dependency "rake", "~> 10.3"
@@ -34,4 +32,11 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "rubocop", "~> 0.23"
   s.add_runtime_dependency "thor", "~> 0.19"
   s.add_runtime_dependency "yardstick", "~> 0.9"
+
+  if RUBY_VERSION < "2.0"
+    s.add_runtime_dependency "pry-debugger"
+  else
+    s.add_runtime_dependency "pippi", "~> 0.0"
+    s.add_runtime_dependency "pry-byebug", "~> 3.0"
+  end
 end

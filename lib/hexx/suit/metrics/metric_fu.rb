@@ -7,6 +7,14 @@ module Hexx
       # Configurator for the metric_fu and all its subpackages
       class MetricFu < Base
 
+        require_relative "metric_fu/base"
+        require_relative "metric_fu/cane"
+        require_relative "metric_fu/churn"
+        require_relative "metric_fu/flay"
+        require_relative "metric_fu/reek"
+        require_relative "metric_fu/roodi"
+        require_relative "metric_fu/saikuro"
+
         # Loads the metric_fu gem dependency
         #
         # @return [Hexx::Suit::Metrics::MetricFu]
@@ -149,7 +157,7 @@ module Hexx
         end
 
         def options
-          @options ||= default_options.merge settings.to_h
+          @options ||= default_options.merge settings.to_hash
         end
 
         def metrics

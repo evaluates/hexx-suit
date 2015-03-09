@@ -35,7 +35,7 @@ module Hexx
         #
         # @return [Array<String>]
         def lines
-          super.map(&:strip).reject(&:empty?)
+          Array(super).map(&:strip).reject(&:empty?)
         end
 
         # Sends itself to system line by line

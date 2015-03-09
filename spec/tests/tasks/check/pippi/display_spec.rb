@@ -44,4 +44,5 @@ describe "Rake::Task['check:pippi:display']", :tasks do
       end
     end
   end
-end
+
+end unless RUBY_VERSION < "2.0"

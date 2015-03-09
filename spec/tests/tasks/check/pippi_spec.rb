@@ -23,4 +23,5 @@ describe "Rake::Task['check:pippi']", :tasks do
         .to(true)
     end
   end
-end
+
+end unless RUBY_VERSION < "2.0"

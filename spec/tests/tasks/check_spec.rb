@@ -15,13 +15,13 @@ describe "Rake::Task[:check]", :tasks do
       expect { subject }
         .to change { task_invoked? "check:pippi:configure" }
         .to(true)
-    end
+    end unless RUBY_VERSION < "2.0"
 
     it "invokes check:pippi:display" do
       expect { subject }
         .to change { task_invoked? "check:pippi:display" }
         .to(true)
-    end
+    end unless RUBY_VERSION < "2.0"
 
     it "invokes check:coverage" do
       expect { subject }

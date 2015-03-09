@@ -22,4 +22,5 @@ describe "Rake::Task['check:pippi:run']", :tasks do
       expect { subject }.to change { commands.include? "rake test" }.to true
     end
   end
-end
+
+end unless RUBY_VERSION < "2.0"

@@ -29,9 +29,6 @@ describe Hexx::Suit do
         check:fu:display
         check:fu:run
         check:inch
-        check:pippi
-        check:pippi:display
-        check:pippi:run
         check:rubocop
         check:rubocop:display
         check:rubocop:run
@@ -43,6 +40,15 @@ describe Hexx::Suit do
         test
       ))
     end
+
+    it "installs pippi tasks" do
+      expect(rake_tasks).to include(*%w(
+        check:pippi
+        check:pippi:display
+        check:pippi:run
+      ))
+    end unless RUBY_VERSION < "2.0"
+
   end
 
   describe ".load_metrics_for" do
@@ -63,16 +69,6 @@ describe Hexx::Suit do
       end
     end
 
-    context "when ENV[USE_PIPPI] is set" do
-
-      before  { ENV["USE_PIPPI"] = "true" }
-
-      it "initializes and runs a pippi settings" do
-        expect(pippi_settings).to receive(:run)
-        subject
-      end
-    end
-
     context "when ENV[USE_SIMPLECOV] isn't set" do
 
       before { ENV["USE_SIMPLECOV"] = nil }
@@ -83,6 +79,17 @@ describe Hexx::Suit do
       end
     end
 
+    context "when ENV[USE_PIPPI] is set" do
+
+      before  { ENV["USE_PIPPI"] = "true" }
+
+      it "initializes and runs a pippi settings" do
+        expect(pippi_settings).to receive(:run)
+        subject
+      end
+
+    end unless RUBY_VERSION < "2.0"
+
     context "when ENV[USE_PIPPI] isn't set" do
 
       before { ENV["USE_PIPPI"] = nil }
@@ -91,6 +98,7 @@ describe Hexx::Suit do
         expect(pippi_settings).not_to receive(:run)
         subject
       end
-    end
+
+    end unless RUBY_VERSION < "2.0"
   end
 end

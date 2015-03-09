@@ -1,8 +1,9 @@
 # encoding: utf-8
 require "spec_helper"
-require "pippi"
 
 describe Hexx::Suit::Metrics::Pippi, :sandbox do
+
+  require "pippi"
 
   shared_context "without pippi.yml" do
    
@@ -99,4 +100,5 @@ describe Hexx::Suit::Metrics::Pippi, :sandbox do
       it_behaves_like "metric runner"
     end
   end
-end
+
+end unless RUBY_VERSION < "2.0"

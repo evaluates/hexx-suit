@@ -76,7 +76,7 @@ module Hexx
 
         def options
           @options ||= begin
-            list = default_options.merge settings.to_h
+            list = default_options.merge settings.to_hash
             list["path"] = Array(list["path"]).join(" ")
             list
           end

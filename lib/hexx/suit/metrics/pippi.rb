@@ -69,7 +69,7 @@ module Hexx
         # helpers
 
         def options
-          @options ||= default_options.merge settings.to_h
+          @options ||= default_options.merge settings.to_hash
         end
 
         def output

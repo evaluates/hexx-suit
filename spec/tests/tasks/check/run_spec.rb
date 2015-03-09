@@ -15,7 +15,7 @@ describe "Rake::Task['check:run']", :tasks do
       expect { subject }
         .to change { task_invoked? "check:pippi:run" }
         .to(true)
-    end
+    end unless RUBY_VERSION < "2.0"
 
     it "invokes check:coverage:run" do
       expect { subject }

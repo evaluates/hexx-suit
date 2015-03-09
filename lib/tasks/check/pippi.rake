@@ -1,4 +1,5 @@
 namespace :check do
+
   namespace :pippi do
 
     metric = Hexx::Suit::Metrics::Pippi
@@ -28,4 +29,5 @@ namespace :check do
 
   desc "Runs tests with pippi runtime metric and displays the results"
   task pippi: %w(pippi:run pippi:display)
-end
+
+end unless RUBY_VERSION < "2.0"
