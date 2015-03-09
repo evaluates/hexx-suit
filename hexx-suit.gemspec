@@ -23,15 +23,15 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "metric_fu", "~> 4.11"
   s.add_runtime_dependency "mutant-rspec", "~> 0.7"
   s.add_runtime_dependency "pry", "~> 0.10"
-  s.add_runtime_dependency "pry-rescue", "~> 1.4"
   s.add_runtime_dependency "rake", "~> 10.3"
   s.add_runtime_dependency "rspec", "~> 3.0"
   s.add_runtime_dependency "rubocop", "~> 0.23"
   s.add_runtime_dependency "thor", "~> 0.19"
   s.add_runtime_dependency "yardstick", "~> 0.9"
 
-  # Gems not tested under JRuby
+  # Gems not available under JRuby head
   if %w(ruby rbx).include? RUBY_ENGINE
+    s.add_runtime_dependency "pry-rescue", "~> 1.4"
     s.add_runtime_dependency "pry-stack_explorer", "~> 0.4"
   end
 

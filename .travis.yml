@@ -7,12 +7,12 @@ rvm:
   - '2.0'
   - '2.1'
   - '2.2'
-  - ruby-head
-  - jruby
-  - jruby-head
   - rbx-2
+  - jruby-1.7
+  - ruby-head
+  - rbx-head
+  - jruby-head
 allow_failures:
-  - rvm: jruby
-  - rvm: rbx-2
   - rvm: ruby-head
+  - rvm: rbx-head
   - rvm: jruby-head

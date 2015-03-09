@@ -148,6 +148,7 @@ Tested under rubies:
 
 * MRI 1.9.3+
 * Rubinius 2+
+* JRuby 1.7+ (ruby 1.9.3)
 
 RSpec 3.0+ used for testing
 
