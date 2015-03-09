@@ -10,9 +10,7 @@ rvm:
   - rbx-2
   - jruby-1.7
   - ruby-head
-  - rbx-head
   - jruby-head
 allow_failures:
   - rvm: ruby-head
-  - rvm: rbx-head
   - rvm: jruby-head
