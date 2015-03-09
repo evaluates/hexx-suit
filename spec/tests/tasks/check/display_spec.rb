@@ -39,7 +39,7 @@ describe "Rake::Task['check:display']", :tasks do
       expect { subject }
         .to change { task_invoked? "check:pippi:display" }
         .to(true)
-    end unless RUBY_VERSION < "2.0"
+    end if USE_PIPPI_METRIC
 
     it "invokes check:yardstick:display" do
       expect { subject }

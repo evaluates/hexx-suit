@@ -10,8 +10,6 @@ Gem::Specification.new do |s|
   s.summary     = "Test/development suit."
   s.description = "The module collects gems used for development and testing."
   s.license     = "MIT"
-  s.platform    = Gem::Platform::RUBY
-  s.required_ruby_version = "~> 2.1"
 
   s.files            = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   s.executables      = ["hexx-suit"]
@@ -33,10 +31,12 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "thor", "~> 0.19"
   s.add_runtime_dependency "yardstick", "~> 0.9"
 
-  if RUBY_VERSION < "2.0"
-    s.add_runtime_dependency "pry-debugger"
-  else
-    s.add_runtime_dependency "pippi", "~> 0.0"
-    s.add_runtime_dependency "pry-byebug", "~> 3.0"
+  if RUBY_ENGINE == "ruby"
+    if RUBY_VERSION < "2.0"
+      s.add_runtime_dependency "pry-debugger"
+    else
+      s.add_runtime_dependency "pry-byebug", "~> 3.0"
+      s.add_runtime_dependency "pippi", "~> 0.0"
+    end
   end
 end

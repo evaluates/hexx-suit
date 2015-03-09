@@ -18,10 +18,10 @@ module Hexx
       require_relative "metrics/rubocop.rb"
       require_relative "metrics/simplecov.rb"
       require_relative "metrics/yardstick.rb"
-      require_relative "metrics/pippi.rb" unless RUBY_VERSION < "2.0"
+      require_relative "metrics/pippi.rb" if USE_PIPPI_METRIC
 
     end
-  
+
   end # module Suit
 
 end # mdoule Hexx

@@ -47,7 +47,7 @@ describe Hexx::Suit do
         check:pippi:display
         check:pippi:run
       ))
-    end unless RUBY_VERSION < "2.0"
+    end if USE_PIPPI_METRIC
 
   end
 
@@ -88,7 +88,7 @@ describe Hexx::Suit do
         subject
       end
 
-    end unless RUBY_VERSION < "2.0"
+    end if USE_PIPPI_METRIC
 
     context "when ENV[USE_PIPPI] isn't set" do
 
@@ -99,6 +99,6 @@ describe Hexx::Suit do
         subject
       end
 
-    end unless RUBY_VERSION < "2.0"
+    end if USE_PIPPI_METRIC
   end
 end

@@ -9,7 +9,7 @@ describe "Rake::Task['check:rubocop:display']", :tasks do
   let(:task)   { Rake::Task["check:rubocop:display"] }
 
   shared_context "without rubocop.yml" do
-    
+
     let(:options) { { "output" => "tmp/rubocop/index.html" } }
   end
 
@@ -34,7 +34,7 @@ describe "Rake::Task['check:rubocop:display']", :tasks do
     it "displays rubocop results" do
       expect { subject }
         .to change { commands }
-        .to ["launchy #{ options["output"] }"]
+        .to ["launchy #{ options['output'] }"]
     end
   end
 

@@ -6,10 +6,10 @@ describe Hexx::Suit::Metrics::Pippi, :sandbox do
   require "pippi"
 
   shared_context "without pippi.yml" do
-   
+
     let(:options) do
       { "checkset" => "basic", "output" => "tmp/pippi/output.log" }
-    end 
+    end
   end
 
   shared_context "with pippi.yml" do
@@ -101,4 +101,4 @@ describe Hexx::Suit::Metrics::Pippi, :sandbox do
     end
   end
 
-end unless RUBY_VERSION < "2.0"
+end if USE_PIPPI_METRIC

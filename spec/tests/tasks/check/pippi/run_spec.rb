@@ -23,4 +23,4 @@ describe "Rake::Task['check:pippi:run']", :tasks do
     end
   end
 
-end unless RUBY_VERSION < "2.0"
+end if USE_PIPPI_METRIC

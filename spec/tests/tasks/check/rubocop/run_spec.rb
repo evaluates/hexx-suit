@@ -9,7 +9,7 @@ describe "Rake::Task['check:rubocop:run']", :tasks do
   let(:task)   { Rake::Task["check:rubocop:run"] }
 
   shared_context "without rubocop.yml" do
-    
+
     let(:options) do
       {
         "output"  => "tmp/rubocop/index.html",

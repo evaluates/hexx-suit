@@ -30,4 +30,4 @@ namespace :check do
   desc "Runs tests with pippi runtime metric and displays the results"
   task pippi: %w(pippi:run pippi:display)
 
-end unless RUBY_VERSION < "2.0"
+end if USE_PIPPI_METRIC

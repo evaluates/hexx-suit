@@ -5,7 +5,7 @@ namespace :check do
     caller  = Hexx::Suit::Utils::System
     format  = -> { ENV.fetch("RUBOCOP_FORMAT") { "html" } }
     output  = -> { ENV.fetch("RUBOCOP_OUTPUT") { "tmp/rubocop/index.html" } }
-    options = -> do
+    options = lambda do
       "-f #{ format.call } -o #{ output.call } -c config/metrics/rubocop.yml"
     end
 

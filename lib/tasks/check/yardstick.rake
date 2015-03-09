@@ -3,7 +3,9 @@ namespace :check do
 
     metric = Hexx::Suit::Metrics::Yardstick
     caller = Hexx::Suit::Utils::System
-    output = ->{ ENV.fetch("YARDSTICK_OUTPUT") { "tmp/yardstick/results.log" } }
+    output = lambda do
+      ENV.fetch("YARDSTICK_OUTPUT") { "tmp/yardstick/results.log" }
+    end
 
     desc "Runs yardstick metric"
     task :run do
