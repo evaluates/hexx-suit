@@ -134,7 +134,7 @@ The gem loads dependencies from the projects below.
 
 * [rubocop](https://github.com/bbatsov/rubocop) - a Ruby static code analyzer
 * [metric_fu](https://github.com/metricfu/metric_fu/) - a collection of Ruby code analyzers.
-* [pippi](https://github.com/tcopeland/pippi) - a utility for finding suboptimal Ruby class API usage. 
+* [pippi](https://github.com/tcopeland/pippi) - a utility for finding suboptimal Ruby class API usage. Available for MRI ruby 2.0+ only.
 
 ### Tools for Documenting
 
@@ -144,7 +144,10 @@ The gem loads dependencies from the projects below.
 
 ## Compatibility
 
-Tested under MRI rubies >= 2.1
+Tested under rubies:
+
+* MRI 1.9.3+
+* Rubinius 2+
 
 RSpec 3.0+ used for testing
 
