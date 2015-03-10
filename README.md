@@ -152,6 +152,15 @@ RSpec 3.0+ used for testing via [hexx-rspec] suit.
 
 [hexx-rspec]: https://github.com/nepalez/hexx-rspec
 
+## Latest Changes
+
+### v1.0.0
+
+* Pippi metric removed as incompatible to rubies 1.9.3
+* 'hexx-rspec' module extracted to separate gem.
+  
+  It is now possible using 'hexx-suit' with the `require: false` key.
+
 ## Contributing
 
 * Fork the project.
