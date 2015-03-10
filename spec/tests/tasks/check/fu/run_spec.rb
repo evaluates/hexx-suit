@@ -4,7 +4,7 @@ describe "Rake::Task['check:fu:run']", :tasks do
 
   # The {#commands} variable is defined in the spec/support/config/tasks.rb
   # It collects the list of commands, that has been sent to system by
-  # any instance of Hexx::Suit::Utils::System utility.
+  # any instance of Hexx::RSpec::System utility.
 
   let(:metric) { Hexx::Suit::Metrics::MetricFu  }
   let(:task)   { Rake::Task["check:fu:run"] }

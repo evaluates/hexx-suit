@@ -3,7 +3,7 @@
 module Hexx
   module Suit
     module Metrics
-      class MetricFu < Base
+      class MetricFu < RSpec::Metrics::Base
 
         # The configurer for the Churn metric
         class Churn < Base

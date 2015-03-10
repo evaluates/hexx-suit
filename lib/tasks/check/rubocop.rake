@@ -2,7 +2,7 @@ namespace :check do
   namespace :rubocop do
 
     metric  = Hexx::Suit::Metrics::Rubocop
-    caller  = Hexx::Suit::Utils::System
+    caller  = Hexx::RSpec::System
     format  = -> { ENV.fetch("RUBOCOP_FORMAT") { "html" } }
     output  = -> { ENV.fetch("RUBOCOP_OUTPUT") { "tmp/rubocop/index.html" } }
     options = lambda do

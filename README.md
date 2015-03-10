@@ -21,35 +21,34 @@ It also defines a set of Rake tasks.
 Add this line to your application's Gemfile:
 
 ```ruby
-    group :test, :development do
-        gem "hexx-suit"
-    end
+group :test, :development do
+  gem "hexx-rspec"
+  gem "hexx-suit", require: false
+end
 ```
 
 Then execute:
 
 ```
-    bundle
+bundle
 ```
 
 And run the task from the application root:
 
 ```
-    hexx-suit install
+hexx-suit install
 ```
 
-Require the gem in the `spec_helper.rb` **before** loading application:
+Require the `hexx-rspec` part of the gem in the `spec_helper.rb` **before** loading application:
 
 ```ruby
-    # spec/spec_helper.rb
-    require "hexx-suit"
+# spec/spec_helper.rb
+require "hexx-rspec"
 
-    # Loads coveralls and pippi runtime metrics
-    # in the application's scope.
-    Hexx::Suit.load_metrics_for(self)
+# Loads coveralls runtime metrics
+Hexx::RSpec.load_metrics_for(self)
 
-    # ...
-    require "my_app"
+require "my_app"
 ```
 
 You can configure all metrics separately in a corresponding yml files, that are created at `config/metrics` directory. The directory also contains default STYLEGUIDE. Feel free to adapt it to your needs.
@@ -63,13 +62,13 @@ The gem adds three tasks for a development process authomation:
 The task runs rspec (runs no coverage controls) **in a bundle environment**.
 
 ```
-    rake test
+rake test
 ```
 
 This is a simple shortcut for longer syntaxes:
 
 ```
-    bundle exec rspec spec
+bundle exec rspec spec
 ```
 
 ### Debug
@@ -77,13 +76,13 @@ This is a simple shortcut for longer syntaxes:
 The tasks runs specs wrapped to pry `rescue` command.
 
 ```
-    rake debug
+rake debug
 ```
 
 This is the same as:
 
 ```
-    bundle exec rescue rspec spec
+bundle exec rescue rspec spec
 ```
 
 ### Check
@@ -91,19 +90,19 @@ This is the same as:
 The task runs rspec under the test coverage control, and then calls all the code metrics, except for mutation testing.
 
 ```
-    rake check
+rake check
 ```
 
 You can use single metrics as well:
 
 ```
-    rake check:yardstick
+rake check:yardstick
 ```
 
 See all tasks at:
 
 ```
-    rake -T check
+rake -T check
 ```
 
 All the tasks will use settings from `config/metrics` folder.
@@ -134,9 +133,8 @@ The gem loads dependencies from the projects below.
 
 * [rubocop](https://github.com/bbatsov/rubocop) - a Ruby static code analyzer
 * [metric_fu](https://github.com/metricfu/metric_fu/) - a collection of Ruby code analyzers.
-* [pippi](https://github.com/tcopeland/pippi) - a utility for finding suboptimal Ruby class API usage. Available for MRI ruby 2.0+ only.
 
-### Tools for Documenting
+### Documentation Tools
 
 * [yard](https://yardoc.org/) - a Ruby documentation tool.
 * [inch](https://trivelop.de/inch/) - a documentation measurement tool.
@@ -144,13 +142,15 @@ The gem loads dependencies from the projects below.
 
 ## Compatibility
 
-Tested under rubies:
+Tested under rubies API 1.9.3+:
 
 * MRI 1.9.3+
-* Rubinius 2+
-* JRuby 1.7+ (ruby 1.9.3)
+* Rubinius 2+ (1.9 and 2.0 modes)
+* JRuby 1.7+ (1.9 and 2.0+ modes)
 
-RSpec 3.0+ used for testing
+RSpec 3.0+ used for testing via [hexx-rspec] suit.
+
+[hexx-rspec]: https://github.com/nepalez/hexx-rspec
 
 ## Contributing
 

@@ -2,7 +2,7 @@ namespace :check do
   namespace :yardstick do
 
     metric = Hexx::Suit::Metrics::Yardstick
-    caller = Hexx::Suit::Utils::System
+    caller = Hexx::RSpec::System
     output = lambda do
       ENV.fetch("YARDSTICK_OUTPUT") { "tmp/yardstick/results.log" }
     end

@@ -1,6 +1,6 @@
 namespace :check do
 
-  caller = Hexx::Suit::Utils::System
+  caller = Hexx::RSpec::System
 
   desc "Runs inch to check quality of API docs"
   task :inch do

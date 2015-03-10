@@ -9,10 +9,9 @@ end
 # Loads bundler tasks
 Bundler::GemHelper.install_tasks
 
-# Loads the Hexx::Suit without tasks
-require "hexx-suit"
+# Loads the Hexx::RSpec and its tasks
+require "hexx-rspec"
+Hexx::RSpec.install_tasks
 
-# Sets the :spec task to default
-task :default do
-  system "bundle exec rspec spec"
-end
+# Sets the Hexx::RSpec :test task to default
+task default: :test

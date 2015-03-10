@@ -3,7 +3,7 @@ module Hexx
     module Metrics
 
       # Prepares and runs rubocop environment from '.hexx-suit.yml'
-      class Rubocop < Base
+      class Rubocop < RSpec::Metrics::Base
 
         # @!scope class
         # Sets ENV variables for rubocop rake tasks

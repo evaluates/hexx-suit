@@ -1,8 +1,8 @@
 namespace :check do
   namespace :coverage do
 
-    metric = Hexx::Suit::Metrics::SimpleCov
-    caller = Hexx::Suit::Utils::System
+    metric = Hexx::RSpec::Metrics::SimpleCov
+    caller = Hexx::RSpec::System
     output = -> { ENV.fetch("SIMPLECOV_OUTPUT") { "coveralls/index.html" } }
 
     # Loads settings for simplecov from the '.hexx-suit.yml'

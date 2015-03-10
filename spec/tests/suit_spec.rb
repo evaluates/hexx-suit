@@ -2,8 +2,7 @@
 
 describe Hexx::Suit do
 
-  let(:coverage_settings) { described_class::Metrics::SimpleCov }
-  let(:pippi_settings)    { described_class::Metrics::Pippi     }
+  let(:coverage_settings) { Hexx::RSpec::Metrics::SimpleCov }
   let(:rake_tasks)        { Rake::Task.tasks.map(&:name)        }
 
   describe ".install_tasks" do
@@ -41,64 +40,17 @@ describe Hexx::Suit do
       ))
     end
 
-    it "installs pippi tasks" do
-      expect(rake_tasks).to include(*%w(
-        check:pippi
-        check:pippi:display
-        check:pippi:run
-      ))
-    end if USE_PIPPI_METRIC
-
-  end
+  end # describe .install_tasks
 
   describe ".load_metrics_for" do
 
-    subject { described_class.load_metrics_for(double) }
+    let(:scope) { double }
+    after { described_class.load_metrics_for scope }
 
-    it "returns self" do
-      expect(subject).to eq described_class
+    it "runs Hexx::Suit.load_metrics_for" do
+      expect(Hexx::RSpec).to receive(:load_metrics_for).with(scope)
     end
 
-    context "when ENV[USE_SIMPLECOV] is set" do
+  end # describe .load_metrics_for
 
-      before  { ENV["USE_SIMPLECOV"] = "true" }
-
-      it "initializes and runs a coverage settings" do
-        expect(coverage_settings).to receive(:run)
-        subject
-      end
-    end
-
-    context "when ENV[USE_SIMPLECOV] isn't set" do
-
-      before { ENV["USE_SIMPLECOV"] = nil }
-
-      it "doesn't run settings" do
-        expect(coverage_settings).not_to receive(:run)
-        subject
-      end
-    end
-
-    context "when ENV[USE_PIPPI] is set" do
-
-      before  { ENV["USE_PIPPI"] = "true" }
-
-      it "initializes and runs a pippi settings" do
-        expect(pippi_settings).to receive(:run)
-        subject
-      end
-
-    end if USE_PIPPI_METRIC
-
-    context "when ENV[USE_PIPPI] isn't set" do
-
-      before { ENV["USE_PIPPI"] = nil }
-
-      it "doesn't run settings" do
-        expect(pippi_settings).not_to receive(:run)
-        subject
-      end
-
-    end if USE_PIPPI_METRIC
-  end
 end

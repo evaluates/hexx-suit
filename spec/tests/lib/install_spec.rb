@@ -17,7 +17,6 @@ describe Hexx::Suit::Install, :sandbox do
         config/metrics/churn.yml
         config/metrics/flay.yml
         config/metrics/metric_fu.yml
-        config/metrics/pippi.yml
         config/metrics/reek.yml
         config/metrics/roodi.yml
         config/metrics/rubocop.yml
@@ -28,8 +27,5 @@ describe Hexx::Suit::Install, :sandbox do
       ).each { |file| expect(file).to be_present_in_sandbox }
     end
 
-    it "adds Hexx::Suit tasks loader to Rakefile" do
-      expect(read_in_sandbox "Rakefile").to include "Hexx::Suit.install_tasks"
-    end
   end
 end

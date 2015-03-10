@@ -13,5 +13,4 @@ end
 
 platforms :mri_20, :mri_21, :mri_22 do
   gem "pry-byebug", "~> 3.0"
-  gem "pippi", "~> 0.0"
 end

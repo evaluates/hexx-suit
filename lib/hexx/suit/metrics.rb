@@ -13,12 +13,9 @@ module Hexx
     # Configurators loads their own dependencies in a corresponding constructor.
     module Metrics
 
-      require_relative "metrics/base"
       require_relative "metrics/metric_fu"
       require_relative "metrics/rubocop.rb"
-      require_relative "metrics/simplecov.rb"
       require_relative "metrics/yardstick.rb"
-      require_relative "metrics/pippi.rb" if USE_PIPPI_METRIC
 
     end
 

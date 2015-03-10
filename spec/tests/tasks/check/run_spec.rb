@@ -11,12 +11,6 @@ describe "Rake::Task['check:run']", :tasks do
 
     subject { try_in_sandbox { task.invoke } }
 
-    it "invokes check:pippi:run" do
-      expect { subject }
-        .to change { task_invoked? "check:pippi:run" }
-        .to(true)
-    end if USE_PIPPI_METRIC
-
     it "invokes check:coverage:run" do
       expect { subject }
         .to change { task_invoked? "check:coverage:run" }

@@ -3,7 +3,7 @@ module Hexx
     module Metrics
 
       # Prepares and runs yardstick environment from '.hexx-suit.yml'
-      class Yardstick < Base
+      class Yardstick < RSpec::Metrics::Base
 
         # Loads yardstick verifier
         #

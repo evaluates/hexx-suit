@@ -26,7 +26,7 @@ RSpec.configure do |config|
 
     # Captures commands that System utility sends to system
     # and stores them in {#commands} array.
-    allow_any_instance_of(Hexx::Suit::Utils::System)
+    allow_any_instance_of(Hexx::RSpec::System)
       .to receive(:system) { |command| commands << command }
   end
 end

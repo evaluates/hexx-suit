@@ -1,10 +1,12 @@
 # Loads the RSpec support files.
-require "rspec"
-Dir[File.expand_path "spec/support/config/*.rb"].each { |file| require file }
+require "hexx-rspec"
 
-# encoding: utf-8
-require "coveralls"
-Coveralls.wear!
+# Loads support files
+Dir.chdir(File.expand_path("..", __FILE__)) do
+  Dir["./support/**/*.rb"].each { |file| require file }
+end
 
-# Loads the code of the module with the RSpec test suit.
+# Loads coveralls runtime metrics
+Hexx::RSpec.load_metrics_for(self)
+
 require "hexx-suit"

@@ -2,7 +2,7 @@ namespace :check do
   namespace :fu do
 
     metric = Hexx::Suit::Metrics::MetricFu
-    caller = Hexx::Suit::Utils::System
+    caller = Hexx::RSpec::System
     output = -> { ENV.fetch("METRIC_FU_OUTPUT") { "tmp/metric_fu/output" } }
 
     # configures the metrics

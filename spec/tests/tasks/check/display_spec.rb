@@ -35,12 +35,6 @@ describe "Rake::Task['check:display']", :tasks do
         .to(true)
     end
 
-    it "invokes check:pippi:display" do
-      expect { subject }
-        .to change { task_invoked? "check:pippi:display" }
-        .to(true)
-    end if USE_PIPPI_METRIC
-
     it "invokes check:yardstick:display" do
       expect { subject }
         .to change { task_invoked? "check:yardstick:display" }

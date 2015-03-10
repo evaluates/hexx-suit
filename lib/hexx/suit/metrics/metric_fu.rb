@@ -5,7 +5,7 @@ module Hexx
     module Metrics
 
       # Configurator for the metric_fu and all its subpackages
-      class MetricFu < Base
+      class MetricFu < RSpec::Metrics::Base
 
         require_relative "metric_fu/base"
         require_relative "metric_fu/cane"

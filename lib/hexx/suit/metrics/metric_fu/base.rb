@@ -1,12 +1,15 @@
 # encoding: utf-8
 
 module Hexx
+
   module Suit
+
     module Metrics
-      class MetricFu < Base
+
+      class MetricFu < RSpec::Metrics::Base
 
         # Base class for metrics configured via metric_fu
-        class Base < Metrics::Base
+        class Base < RSpec::Metrics::Base
 
           # Constructs the object and loads 'metric_fu' dependency
           #
@@ -52,8 +55,13 @@ module Hexx
               yield(metric)
             end
           end
-        end
-      end
-    end
-  end
-end
+
+        end # class Base
+
+      end # class MetricFu
+
+    end # module Metrics
+
+  end # module Suit
+
+end # module Hexx
