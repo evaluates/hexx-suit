@@ -11,9 +11,9 @@ describe "Rake::Task[:check]", :tasks do
 
     subject { try_in_sandbox { task.invoke } }
 
-    it "invokes check:coverage" do
+    it "invokes test:coverage" do
       expect { subject }
-        .to change { task_invoked? "check:coverage" }
+        .to change { task_invoked? "test:coverage" }
         .to(true)
     end
 

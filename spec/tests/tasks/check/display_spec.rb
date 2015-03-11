@@ -29,9 +29,9 @@ describe "Rake::Task['check:display']", :tasks do
         .to(true)
     end
 
-    it "invokes check:coverage:display" do
+    it "invokes test:coverage:display" do
       expect { subject }
-        .to change { task_invoked? "check:coverage:display" }
+        .to change { task_invoked? "test:coverage:display" }
         .to(true)
     end
 

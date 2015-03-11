@@ -20,9 +20,6 @@ describe Hexx::Suit do
     it "installs described_class tasks" do
       expect(rake_tasks).to include(*%w(
         check
-        check:coverage
-        check:coverage:display
-        check:coverage:run
         check:display
         check:fu
         check:fu:display
@@ -37,6 +34,9 @@ describe Hexx::Suit do
         check:yardstick:run
         debug
         test
+        test:coverage
+        test:coverage:display
+        test:coverage:run
       ))
     end
 
