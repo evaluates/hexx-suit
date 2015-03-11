@@ -28,7 +28,12 @@ module Hexx
 
       # @private
       def install_rspec
-        Hexx::RSpec::Install.start
+        Hexx::RSpec::Install.start %w(--no-rakefile)
+      end
+
+      # @private
+      def create_rakefile
+        copy_file "Rakefile"
       end
 
       # @private

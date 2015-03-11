@@ -27,5 +27,9 @@ describe Hexx::Suit::Install, :sandbox do
       ).each { |file| expect(file).to be_present_in_sandbox }
     end
 
+    it "adds Hexx::Suit tasks loader to Rakefile" do
+      expect(read_in_sandbox "Rakefile").to include "Hexx::Suit.install_tasks"
+    end
+
   end
 end

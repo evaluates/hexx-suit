@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 1.9.3"
 
   s.add_runtime_dependency "guard-rspec", "~> 4.3"
-  s.add_runtime_dependency "hexx-rspec", "~> 0.0"
+  s.add_runtime_dependency "hexx-rspec", "~> 0.1"
   s.add_runtime_dependency "inch", "~> 0.5"
   s.add_runtime_dependency "metric_fu", "~> 4.11"
   s.add_runtime_dependency "mutant-rspec", "~> 0.7"
