@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-describe Hexx::Suit::Install, :sandbox do
+describe Hexx::Suit::Install, :sandbox, :capture do
 
   describe ".start" do
 

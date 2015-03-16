@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-describe "hexx-suit install", :sandbox do
+describe "hexx-suit install", :sandbox, :capture do
 
   before { try_in_sandbox { `hexx-suit install` } }
 

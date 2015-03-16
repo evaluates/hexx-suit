@@ -9,7 +9,7 @@ describe "Rake::Task['check:fu:display']", :tasks do
   let(:metric) { Hexx::Suit::Metrics::MetricFu  }
   let(:task)   { Rake::Task["check:fu:display"] }
 
-  describe ".invoke", :sandbox do
+  describe ".invoke", :sandbox, :capture do
 
     let(:subject) { try_in_sandbox { task.invoke } }
 

@@ -7,7 +7,7 @@ describe "Rake::Task['check:yardstick']", :tasks do
 
   let(:task) { Rake::Task["check:yardstick"] }
 
-  describe ".invoke", :sandbox do
+  describe ".invoke", :sandbox, :capture do
 
     subject { try_in_sandbox { task.invoke } }
 

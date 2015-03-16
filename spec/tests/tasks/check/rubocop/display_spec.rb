@@ -38,7 +38,7 @@ describe "Rake::Task['check:rubocop:display']", :tasks do
     end
   end
 
-  describe ".invoke", :sandbox do
+  describe ".invoke", :sandbox, :capture do
 
     subject { try_in_sandbox { task.invoke } }
 

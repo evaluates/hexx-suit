@@ -7,7 +7,7 @@ describe "Rake::Task['check:display']", :tasks do
 
   let(:task) { Rake::Task["check:display"] }
 
-  describe ".invoke", :sandbox do
+  describe ".invoke", :sandbox, :capture do
 
     subject { try_in_sandbox { task.invoke } }
 

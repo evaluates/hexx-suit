@@ -2,7 +2,7 @@
 require "spec_helper"
 require "metric_fu"
 
-describe Hexx::Suit::Metrics::MetricFu, :sandbox do
+describe Hexx::Suit::Metrics::MetricFu, :sandbox, :capture do
 
   shared_context "without metric_fu.yml" do
 

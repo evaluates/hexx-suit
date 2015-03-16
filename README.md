@@ -18,13 +18,11 @@ It also defines a set of Rake tasks.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this lines to your application's Gemfile:
 
 ```ruby
-group :test, :development do
-  gem "hexx-rspec"
-  gem "hexx-suit", require: false
-end
+gem "hexx-rspec", group: %w(test development)
+gem "hexx-suit",  group: :metrics, if RUBY_VERSION == "ruby"
 ```
 
 Then execute:
@@ -39,19 +37,15 @@ And run the task from the application root:
 hexx-suit install
 ```
 
-Require the `hexx-rspec` part of the gem in the `spec_helper.rb` **before** loading application:
+You can configure all metrics separately in a corresponding yml files, that are created at `config/metrics` directory. The directory also contains default STYLEGUIDE. Feel free to adapt it to your needs.
 
-```ruby
-# spec/spec_helper.rb
-require "hexx-rspec"
+In a [`.travis.yml`][Travis] it is recommended to exclude metrics from the build with option:
 
-# Loads coveralls runtime metrics
-Hexx::RSpec.load_metrics_for(self)
-
-require "my_app"
+```yaml
+bundler_args: --without metrics
 ```
 
-You can configure all metrics separately in a corresponding yml files, that are created at `config/metrics` directory. The directory also contains default STYLEGUIDE. Feel free to adapt it to your needs.
+[Travis]: http://docs.travis-ci.com/user/languages/ruby/#Dependency-Management
 
 ## Usage
 
@@ -129,6 +123,8 @@ The gem loads dependencies from the projects below.
 * [pry](https://github.com/pry/pry/wiki) - a Ruby development console and debugging tool.
 * [pry-rescue](https://github.com/ConradIrwin/pry-rescue)
 * [pry-stack-explorer](https://github.com/pry/pry-stack_explorer)
+* [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug) for MRI 2.0+
+* [pry-debugger](https://github.com/nixme/pry-debugger) for MRI 1.9.3
 
 ### Tools for Tasks Authomation
 
@@ -148,24 +144,11 @@ The gem loads dependencies from the projects below.
 
 ## Compatibility
 
-Tested under rubies API 1.9.3+:
-
-* MRI 1.9.3+
-* Rubinius 2+ (1.9 and 2.0 modes)
-* JRuby 1.7+ (1.9 and 2.0+ modes)
+Tested under MRI 1.9.3+:
 
 RSpec 3.0+ used for testing via [hexx-rspec] suit.
 
 [hexx-rspec]: https://github.com/nepalez/hexx-rspec
-
-## Latest Changes
-
-### v1.0.0
-
-* Pippi metric removed as incompatible to rubies 1.9.3
-* 'hexx-rspec' module extracted to separate gem.
-  
-  It is now possible using 'hexx-suit' with the `require: false` key.
 
 ## Contributing
 

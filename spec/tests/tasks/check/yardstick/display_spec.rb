@@ -9,7 +9,7 @@ describe "Rake::Task['check:yardstick:display']", :tasks do
   let(:metric) { Hexx::Suit::Metrics::Yardstick }
   let(:task)   { Rake::Task["check:yardstick:display"] }
 
-  describe ".invoke", :sandbox do
+  describe ".invoke", :sandbox, :capture do
 
     subject { try_in_sandbox { task.invoke } }
 

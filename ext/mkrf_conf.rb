@@ -11,10 +11,10 @@ inst = Gem::DependencyInstaller.new
 
 begin
 
-  if RUBY_ENGINE == "ruby"
-    inst.install "fasterer", "~> 0.1"
-    inst.install "pry-rescue", "~> 1.4"
-    inst.install "pry-stack_explorer", "~> 0.4"
+  if RUBY_VERSION < "2.0"
+    inst.install "pry-debugger", "~> 0.2"
+  else
+    inst.install "pry-byebug", "~> 3.0"
   end
 
 rescue

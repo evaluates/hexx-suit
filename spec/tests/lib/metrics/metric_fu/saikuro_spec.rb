@@ -2,7 +2,7 @@
 require "spec_helper"
 require "metric_fu"
 
-describe Hexx::Suit::Metrics::MetricFu::Saikuro, :sandbox do
+describe Hexx::Suit::Metrics::MetricFu::Saikuro, :sandbox, :capture do
 
   let(:config) do
     ::MetricFu::Configuration.configure_metric(:saikuro) do |metric|

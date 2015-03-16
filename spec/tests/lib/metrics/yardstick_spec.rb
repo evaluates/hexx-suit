@@ -2,7 +2,7 @@
 require "spec_helper"
 require "yardstick/rake/measurement"
 
-describe Hexx::Suit::Metrics::Yardstick, :sandbox do
+describe Hexx::Suit::Metrics::Yardstick, :sandbox, :capture do
 
   shared_context "without yardstick.yml" do
 

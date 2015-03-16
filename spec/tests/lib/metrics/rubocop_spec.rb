@@ -1,7 +1,7 @@
 # encoding: utf-8
 require "spec_helper"
 
-describe Hexx::Suit::Metrics::Rubocop, :sandbox do
+describe Hexx::Suit::Metrics::Rubocop, :sandbox, :capture do
 
   shared_context "without rubocop.yml" do
 

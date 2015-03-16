@@ -2,7 +2,7 @@
 require "spec_helper"
 require "metric_fu"
 
-describe Hexx::Suit::Metrics::MetricFu::Reek, :sandbox do
+describe Hexx::Suit::Metrics::MetricFu::Reek, :sandbox, :capture do
 
   let(:config) do
     ::MetricFu::Configuration.configure_metric(:reek) do |metric|
