@@ -71,6 +71,12 @@ This is a simple shortcut for longer syntaxes:
 bundle exec rspec spec
 ```
 
+You can also check test coverage:
+
+```
+rake test:coverage
+```
+
 ### Debug
 
 The tasks runs specs wrapped to pry `rescue` command.
@@ -121,7 +127,6 @@ The gem loads dependencies from the projects below.
 ### Tools for Debugging
 
 * [pry](https://github.com/pry/pry/wiki) - a Ruby development console and debugging tool.
-* [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
 * [pry-rescue](https://github.com/ConradIrwin/pry-rescue)
 * [pry-stack-explorer](https://github.com/pry/pry-stack_explorer)
 
@@ -133,6 +138,7 @@ The gem loads dependencies from the projects below.
 
 * [rubocop](https://github.com/bbatsov/rubocop) - a Ruby static code analyzer
 * [metric_fu](https://github.com/metricfu/metric_fu/) - a collection of Ruby code analyzers.
+* [fasterer](https://github.com/DamirSvrtan/fasterer) - a static code analyzer for suboptimal code.
 
 ### Documentation Tools
 

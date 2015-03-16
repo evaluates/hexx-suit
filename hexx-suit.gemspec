@@ -30,8 +30,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "yardstick", "~> 0.9"
 
   if RUBY_ENGINE == "ruby"
-    gem.add_runtime_dependency "pry-byebug", "~> 3.0" unless RUBY_VERSION < "2"
-    gem.add_runtime_dependency "pry-debugger", "~> 0.2"   if RUBY_VERSION < "2"
+    gem.add_runtime_dependency "fasterer", "~> 0.1"
     gem.add_runtime_dependency "pry-rescue", "~> 1.4"
     gem.add_runtime_dependency "pry-stack_explorer", "~> 0.4"
   end
