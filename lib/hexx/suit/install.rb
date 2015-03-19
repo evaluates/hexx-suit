@@ -61,6 +61,23 @@ module Hexx
         copy_file "_rubocop.yml", ".rubocop.yml"
       end
 
+      # @private
+      def create_gemfile
+        copy_file "Gemfile", skip: true
+        append_to_file(
+          "Gemfile",
+          "\ngem \"hexx-suit\", \"~> #{ version }\"," \
+          " group: :metrics if RUBY_ENGINE == \"ruby\"\n",
+          skip: true
+        )
+      end
+
+      private
+
+      def version
+        Hexx::Suit::VERSION.split(".")[0..1].join(".")
+      end
+
     end # class Install
 
   end # module Suit

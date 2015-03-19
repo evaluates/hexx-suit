@@ -12,6 +12,7 @@ describe Hexx::Suit::Install, :sandbox, :capture do
         .rubocop.yml
         .yardopts
         Guardfile
+        Gemfile
         Rakefile
         config/metrics/cane.yml
         config/metrics/churn.yml
