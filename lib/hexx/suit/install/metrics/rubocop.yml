@@ -27,9 +27,7 @@ Style/ClassAndModuleChildren:
     - '**/*_spec.rb'
 
 Style/Documentation:
-  Exclude:
-    - '**/version.rb'
-    - '**/*_spec.rb'
+  Enabled: false
 
 Style/EmptyLinesAroundBlockBody:
   Enabled: false
