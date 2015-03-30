@@ -25,6 +25,7 @@ describe Hexx::Suit::Install, :sandbox, :capture do
         config/metrics/simplecov.yml
         config/metrics/yardstick.yml
         config/metrics/STYLEGUIDE
+        spec/spec_helper.rb
       ).each { |file| expect(file).to be_present_in_sandbox }
     end
 

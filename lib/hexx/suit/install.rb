@@ -32,6 +32,11 @@ module Hexx
       end
 
       # @private
+      def update_spec_helper
+        template "spec/spec_helper.erb", "spec/spec_helper.rb", force: true
+      end
+
+      # @private
       def create_rakefile
         copy_file "Rakefile"
       end
@@ -76,6 +81,10 @@ module Hexx
 
       def version
         Hexx::Suit::VERSION.split(".")[0..1].join(".")
+      end
+
+      def gemname
+        @gemname ||= ::File.basename(destination_root).downcase
       end
 
     end # class Install
