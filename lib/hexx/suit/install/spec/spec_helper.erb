@@ -3,7 +3,7 @@
 begin
   require "hexx-suit"
   Hexx::Suit.load_metrics_for(self)
-rescue
+rescue LoadError
   require "hexx-rspec"
   Hexx::RSpec.load_metrics_for(self)
 end
