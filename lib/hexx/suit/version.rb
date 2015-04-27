@@ -6,7 +6,7 @@ module Hexx
 
     # The semantic version of the module.
     # @see http://semver.org/ Semantic versioning 2.0
-    VERSION = "2.2.0".freeze
+    VERSION = "2.2.1".freeze
 
   end # module Suit
 
