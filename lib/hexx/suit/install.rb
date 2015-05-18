@@ -38,17 +38,17 @@ module Hexx
 
       # @private
       def create_rakefile
-        copy_file "Rakefile"
+        template "Rakefile.erb", "Rakefile"
       end
 
       # @private
       def create_guardfile
-        copy_file "Guardfile"
+        template "Guardfile.erb", "Guardfile"
       end
 
       # @private
       def create_yardopts
-        copy_file "_yardopts", ".yardopts"
+        template "_yardopts.erb", ".yardopts"
       end
 
       # @private
@@ -85,6 +85,14 @@ module Hexx
 
       def gemname
         @gemname ||= ::File.basename(destination_root).downcase
+      end
+
+      def namespace
+        @namespace ||=
+          gemname
+          .split("-")
+          .map { |item| item.split("_").map(&:capitalize).join }
+          .join("::")
       end
 
     end # class Install

@@ -33,5 +33,10 @@ describe Hexx::Suit::Install, :sandbox, :capture do
       expect(read_in_sandbox "Rakefile").to include "Hexx::Suit.install_tasks"
     end
 
+    it "adds mutant task to Rakefile" do
+      expect(read_in_sandbox "Rakefile")
+        .to include "mutant -r spec/spec_helper --use rspec Sandbox*"
+    end
+
   end
 end

@@ -20,3 +20,8 @@ end
 
 # Sets the Hexx::RSpec :test task to default
 task default: "test:coverage:run"
+
+desc "Runs mutation metric for testing"
+task :mutant do
+  system "mutant -r spec/spec_helper --use rspec <%= namespace %>* --fail-fast"
+end
