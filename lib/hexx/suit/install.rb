@@ -70,9 +70,11 @@ module Hexx
       def create_gemfile
         copy_file "Gemfile", skip: true
         append_to_file(
-          "Gemfile",
-          "\ngem \"hexx-suit\", \"~> #{ version }\"," \
-          " group: :metrics if RUBY_ENGINE == \"ruby\"\n",
+          "Gemfile", %(
+          |group :metrics do
+          |  gem "hexx-suit", "~> #{ version }" if RUBY_ENGINE == "ruby"
+          |end
+          |).gsub(/ *\|/, ""),
           skip: true
         )
       end
