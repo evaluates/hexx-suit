@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.version     = Hexx::Suit::VERSION.dup
   gem.author      = "Andrew Kozin"
   gem.email       = "andrew.kozin@gmail.com"
-  gem.homepage    = "https://github.com/nepalez/hexx-suit"
+  gem.homepage    = "https://github.com/hexx-rb/hexx-suit"
   gem.summary     = "Test/development suit."
   gem.description = "The module collects gems used for development and testing."
   gem.license     = "MIT"
@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
   gem.extensions       = "ext/mkrf_conf.rb"
 
   gem.required_ruby_version = ">= 1.9.3"
+
   gem.add_runtime_dependency "fasterer", "~> 0.1"
   gem.add_runtime_dependency "guard-rspec", "~> 4.3"
   gem.add_runtime_dependency "hexx-rspec", "~> 0.1"
@@ -31,5 +32,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "pry-stack_explorer", "~> 0.4"
   gem.add_runtime_dependency "rubocop", "~> 0.23"
   gem.add_runtime_dependency "yardstick", "~> 0.9"
+
+  gem.add_development_dependency "bundler", "~> 1.7"
 
 end

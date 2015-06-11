@@ -1,16 +1,19 @@
-# Hexx::Suit
+# Hexx::Suit   [![Documentation Status](https://readthedocs.org/projects/hexx-suit/badge/?version=latest)][readthedocs]
 
 [![Gem Version](https://img.shields.io/gem/v/hexx-suit.svg?style=flat)][gem]
-[![Build Status](https://img.shields.io/travis/nepalez/hexx-suit/master.svg?style=flat)][travis]
-[![Dependency Status](https://img.shields.io/gemnasium/nepalez/hexx-suit.svg?style=flat)][gemnasium]
-[![Coverage](https://img.shields.io/coveralls/nepalez/hexx-suit.svg?style=flat)][coveralls]
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](file:LICENSE)
+[![Build Status](https://travis-ci.org/hexx-rb/hexx-suit.svg?branch=master)][travis]
+[![Dependency Status](https://img.shields.io/gemnasium/hexx-rb/hexx-suit.svg?style=flat)][gemnasium]
+[![Code Climate](https://img.shields.io/codeclimate/github/hexx-rb/hexx-suit.svg?style=flat)][codeclimate]
+[![Coverage](https://img.shields.io/coveralls/hexx-rb/hexx-suit.svg?style=flat)][coveralls]
+[![Inline docs](http://inch-ci.org/github/hexx-rb/hexx-suit.svg)][inch]
 
+[readthedocs]: http://hexx-suit.readthedocs.org
 [gem]: https://rubygems.org/gems/hexx-suit
-[travis]: https://travis-ci.org/nepalez/hexx-suit
-[gemnasium]: https://gemnasium.com/nepalez/hexx-suit
-[codeclimate]: https://codeclimate.com/github/nepalez/hexx-suit
-[coveralls]: https://coveralls.io/r/nepalez/hexx-suit
+[travis]: https://travis-ci.org/hexx-rb/hexx-suit
+[gemnasium]: https://gemnasium.com/hexx-rb/hexx-suit
+[codeclimate]: https://codeclimate.com/github/hexx-rb/hexx-suit
+[coveralls]: https://coveralls.io/r/hexx-rb/hexx-suit
+[inch]: https://inch-ci.org/github/hexx-rb/hexx-suit
 
 The module collects the test/development suit to be shared among projects, along with base settings for included packages.
 
@@ -39,13 +42,13 @@ hexx-suit install
 
 You can configure all metrics separately in a corresponding yml files, that are created at `config/metrics` directory. The directory also contains default STYLEGUIDE. Feel free to adapt it to your needs.
 
-In a [`.travis.yml`][Travis] it is recommended to exclude metrics from the build with option:
+In a [`.travis.yml`][Travis settings] it is recommended to exclude metrics from the build with option:
 
 ```yaml
 bundler_args: --without metrics
 ```
 
-[Travis]: http://docs.travis-ci.com/user/languages/ruby/#Dependency-Management
+[Travis settings]: http://docs.travis-ci.com/user/languages/ruby/#Dependency-Management
 
 ## Usage
 
@@ -144,22 +147,22 @@ The gem loads dependencies from the projects below.
 
 ## Compatibility
 
-Tested under MRI 1.9.3+:
+Tested under [MRI rubies 1.9.3+](.travis.yml).
 
-RSpec 3.0+ used for testing via [hexx-rspec] suit.
+Uses [RSpec] 3.0+ for testing via [hexx-rspec] suit.
 
-[hexx-rspec]: https://github.com/nepalez/hexx-rspec
+[RSpec]: http://rspec.info
+[hexx-rspec]: https://github.com/hexx-rb/hexx-rspec
 
 ## Contributing
 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with Rakefile or version
-  (if you want to have your own version, that is fine but bump version
-  in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+* Read the [STYLEGUIDE](config/metrics/STYLEGUIDE)
+* [Fork the project](https://github.com/hexx-rb/hexx-suit)
+* Create your feature branch (`git checkout -b my-new-feature`)
+* Add tests for it
+* Commit your changes (`git commit -am '[UPDATE] Add some feature'`)
+* Push to the branch (`git push origin my-new-feature`)
+* Create a new Pull Request
 
 ## License
 
