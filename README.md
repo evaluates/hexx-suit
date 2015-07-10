@@ -147,7 +147,7 @@ The gem loads dependencies from the projects below.
 
 ## Compatibility
 
-Tested under [MRI rubies 1.9.3+](.travis.yml).
+Tested under [MRI rubies 2.1+](.travis.yml).
 
 Uses [RSpec] 3.0+ for testing via [hexx-rspec] suit.
 

@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.extra_rdoc_files = Dir["LICENSE", "README.md", ".yardopts"]
   gem.extensions       = "ext/mkrf_conf.rb"
 
-  gem.required_ruby_version = ">= 1.9.3"
+  gem.required_ruby_version = ">= 2.1"
 
   gem.add_runtime_dependency "fasterer", "~> 0.1"
   gem.add_runtime_dependency "guard-rspec", "~> 4.3"
