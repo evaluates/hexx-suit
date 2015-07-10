@@ -72,7 +72,7 @@ module Hexx
         append_to_file(
           "Gemfile", %(
           |group :metrics do
-          |  gem "hexx-suit", "~> #{ version }" if RUBY_ENGINE == "ruby"
+          |  gem "hexx-suit", "~> #{version}" if RUBY_ENGINE == "ruby"
           |end
           |).gsub(/ *\|/, ""),
           skip: true

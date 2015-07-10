@@ -77,7 +77,7 @@ module Hexx
         end
 
         def configure_packages
-          packages.map { |item| "configure_#{ item }" }.each(&method(:send))
+          packages.map { |item| "configure_#{item}" }.each(&method(:send))
         end
 
         def configure_cane

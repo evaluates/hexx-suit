@@ -11,7 +11,7 @@ Bundler::GemHelper.install_tasks
 
 # Loads the Hexx::RSpec and its tasks
 require "hexx-rspec"
-Hexx::RSpec.install_tasks
+Hexx::RSpec::Tasks.install
 
 # Sets the Hexx::RSpec :test task to default
 task default: :test

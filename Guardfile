@@ -4,17 +4,17 @@ guard :rspec, cmd: "bundle exec rspec" do
 
   watch(%r{^lib/tasks/(.+)\.rb$}) do |m|
     [
-      "spec/tests/tasks/#{ m[1] }_spec.rb",
-      "spec/tests/tasks/#{ m[1] }/**/*_spec.rb"
+      "spec/tests/tasks/#{m[1]}_spec.rb",
+      "spec/tests/tasks/#{m[1]}/**/*_spec.rb"
     ]
   end
 
   watch(%r{^lib/hexx/suit/(.+)\.rb$}) do |m|
-    "spec/tests/lib/#{ m[1] }_spec.rb"
+    "spec/tests/lib/#{m[1]}_spec.rb"
   end
 
   watch(%r{^lib/hexx/suit/(.+)/base\.rb$}) do |m|
-    "spec/tests/lib/#{ m[1] }/*_spec.rb"
+    "spec/tests/lib/#{m[1]}/*_spec.rb"
   end
 
   watch("lib/hexx/suit.rb") { "spec" }

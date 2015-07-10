@@ -2,7 +2,6 @@ namespace :check do
   namespace :yardstick do
 
     metric = Hexx::Suit::Metrics::Yardstick
-    caller = Hexx::RSpec::System
     output = lambda do
       ENV.fetch("YARDSTICK_OUTPUT") { "tmp/yardstick/results.log" }
     end
@@ -11,7 +10,7 @@ namespace :check do
     task :run do
       puts "******* STARTING METRIC yardstick"
       metric.run
-      puts "see results in #{ output.call }"
+      puts "see results in #{output.call}"
       puts "******* ENDING METRIC yardstick"
     end
 
@@ -19,7 +18,7 @@ namespace :check do
     task :display do
       puts "******* DISPLAYING METRIC yardstick"
       metric.load
-      caller.call "cat #{ output.call }"
+      Hexx::RSpec["cat #{output.call}"]
       puts "******* ENDING METRIC yardstick"
     end
   end

@@ -2,10 +2,6 @@
 
 describe "Rake::Task['check:rubocop:display']", :tasks do
 
-  # The {#commands} variable is defined in the spec/support/config/tasks.rb
-  # It collects the list of commands, that has been sent to system by
-  # any instance of Hexx::RSpec::System utility.
-
   let(:task)   { Rake::Task["check:rubocop:display"] }
 
   shared_context "without rubocop.yml" do
@@ -34,7 +30,7 @@ describe "Rake::Task['check:rubocop:display']", :tasks do
     it "displays rubocop results" do
       expect { subject }
         .to change { commands }
-        .to ["launchy #{ options['output'] }"]
+        .to ["launchy #{options['output']}"]
     end
   end
 

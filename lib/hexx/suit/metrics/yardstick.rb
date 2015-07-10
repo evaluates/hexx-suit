@@ -56,10 +56,8 @@ module Hexx
         # operations
 
         def prepare_output
-          SYSTEM.call %(
-            mkdir #{ ::File.dirname(output) } -p
-            touch #{ output }
-          )
+          Hexx::RSpec["mkdir #{::File.dirname(output)} -p"]
+          Hexx::RSpec["touch #{output}"]
         end
 
         def set_environment

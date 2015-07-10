@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency "fasterer", "~> 0.1"
   gem.add_runtime_dependency "guard-rspec", "~> 4.3"
-  gem.add_runtime_dependency "hexx-rspec", "~> 0.1"
+  gem.add_runtime_dependency "hexx-rspec", "~> 0.5"
   gem.add_runtime_dependency "inch", "~> 0.5"
   gem.add_runtime_dependency "metric_fu", "~> 4.11"
   gem.add_runtime_dependency "mutant-rspec", "~> 0.7"
